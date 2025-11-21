@@ -1,0 +1,31 @@
+// Add this import after MiniTimer import:
+import { PiPTimer } from '@/components/mini-timer/PiPTimer';
+
+// Add this to TimerControls:
+onPiP={async () => {
+  const video = document.querySelector('video');
+  if (video && 'pictureInPictureEnabled' in document) {
+    try {
+      if (document.pictureInPictureElement) {
+        await document.exitPictureInPicture();
+      } else {
+        await video.play();
+        await new Promise(resolve => {
+          if (video.readyState >= 2) resolve(true);
+          else video.addEventListener('loadedmetadata', () => resolve(true), { once: true });
+        });
+        await video.requestPictureInPicture();
+      }
+    } catch (e) {
+      console.warn('PiP failed:', e);
+    }
+  }
+}}
+
+// Add this after MiniTimer component:
+<PiPTimer
+  timeRemaining={timeRemaining}
+  status={status}
+  timerName="[TIMER_NAME]"
+  onToggle={handleToggle}
+/>

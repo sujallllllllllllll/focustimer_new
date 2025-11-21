@@ -34,3 +34,27 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+###TODOS- 
+Add Sound Files
+You'll need to add timer sound files. Here are options:
+
+Option 1: Download Free Sounds
+
+Visit freesound.org
+Search for: "bell notification", "chime", "gentle alert"
+Download and place in public/sounds/alerts/
+Option 2: Use Browser Generated Tones (Temporary)
+Create a simple tone generator in your code until you get real sounds.
+
+Option 3: Use Free Sound Libraries
+
+Zapsplat - Free sound effects
+Mixkit - Free sounds
+
+Optimization Strategies:
+
+Usage in Timer Page:
