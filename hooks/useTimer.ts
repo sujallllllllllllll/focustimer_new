@@ -47,13 +47,45 @@ export function useTimer({ config, onSessionComplete, onCycleComplete }: UseTime
         }
         setStatus('completed');
         playSound();
-        showNotification(config.name, currentSession === 'work' ? 'Time for a break!' : 'Break is over!');
+        const message = currentSession === 'work' ? 'Time for a break!' : 'Break is over!';
+        showNotification(config.name, message);
         onSessionComplete?.(currentSession);
+        
+        // Auto-start next session
+        setTimeout(() => {
+          if (currentSession === 'work' && config.autoStartBreak) {
+            const shouldLongBreak = config.cyclesBeforeLongBreak && currentCycle % config.cyclesBeforeLongBreak === 0;
+            setCurrentSession(shouldLongBreak ? 'longBreak' : 'break');
+            const nextDuration = shouldLongBreak ? (config.longBreakDuration || config.breakDuration) : config.breakDuration;
+            setTimeRemaining(nextDuration);
+            setStatus('running');
+            startTimeRef.current = Date.now();
+          } else if (currentSession !== 'work' && config.autoStartWork) {
+            if (currentSession === 'longBreak') onCycleComplete?.();
+            setCurrentCycle(prev => prev + 1);
+            setCurrentSession('work');
+            setTimeRemaining(config.workDuration);
+            setStatus('running');
+            startTimeRef.current = Date.now();
+          } else {
+            if (currentSession === 'work') {
+              const shouldLongBreak = config.cyclesBeforeLongBreak && currentCycle % config.cyclesBeforeLongBreak === 0;
+              setCurrentSession(shouldLongBreak ? 'longBreak' : 'break');
+              setTimeRemaining(shouldLongBreak ? (config.longBreakDuration || config.breakDuration) : config.breakDuration);
+            } else {
+              if (currentSession === 'longBreak') onCycleComplete?.();
+              setCurrentCycle(prev => prev + 1);
+              setCurrentSession('work');
+              setTimeRemaining(config.workDuration);
+            }
+            setStatus('idle');
+          }
+        }, 1000);
       }
     }, 100);
     
     setStatus('running');
-  }, [status, timeRemaining, currentSession, config, playSound, showNotification, onSessionComplete]);
+  }, [status, timeRemaining, currentSession, currentCycle, config, playSound, showNotification, onSessionComplete, onCycleComplete]);
 
   const pause = useCallback(() => {
     if (intervalRef.current) {
@@ -93,14 +125,52 @@ export function useTimer({ config, onSessionComplete, onCycleComplete }: UseTime
       if (currentSession === 'work') {
         const shouldLongBreak = config.cyclesBeforeLongBreak && currentCycle % config.cyclesBeforeLongBreak === 0;
         setCurrentSession(shouldLongBreak ? 'longBreak' : 'break');
+        setTimeRemaining(shouldLongBreak ? (config.longBreakDuration || config.breakDuration) : config.breakDuration);
+        if (config.autoStartBreak) {
+          setStatus('running');
+          startTimeRef.current = Date.now();
+          intervalRef.current = setInterval(() => {
+            const elapsed = Date.now() - startTimeRef.current;
+            const duration = shouldLongBreak ? (config.longBreakDuration || config.breakDuration) : config.breakDuration;
+            const remaining = Math.max(0, duration - Math.floor(elapsed / 1000));
+            setTimeRemaining(remaining);
+            if (remaining <= 0) {
+              if (intervalRef.current) clearInterval(intervalRef.current);
+              setStatus('completed');
+              playSound();
+              showNotification(config.name, 'Break is over!');
+              onSessionComplete?.(shouldLongBreak ? 'longBreak' : 'break');
+            }
+          }, 100);
+        } else {
+          setStatus('idle');
+        }
       } else {
         if (currentSession === 'longBreak') {
           onCycleComplete?.();
         }
         setCurrentCycle(prev => prev + 1);
         setCurrentSession('work');
+        setTimeRemaining(config.workDuration);
+        if (config.autoStartWork) {
+          setStatus('running');
+          startTimeRef.current = Date.now();
+          intervalRef.current = setInterval(() => {
+            const elapsed = Date.now() - startTimeRef.current;
+            const remaining = Math.max(0, config.workDuration - Math.floor(elapsed / 1000));
+            setTimeRemaining(remaining);
+            if (remaining <= 0) {
+              if (intervalRef.current) clearInterval(intervalRef.current);
+              setStatus('completed');
+              playSound();
+              showNotification(config.name, 'Time for a break!');
+              onSessionComplete?.('work');
+            }
+          }, 100);
+        } else {
+          setStatus('idle');
+        }
       }
-      setStatus('idle');
     }, 1000);
   }, [currentSession, currentCycle, config, playSound, showNotification, onSessionComplete, onCycleComplete]);
 

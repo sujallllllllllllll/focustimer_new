@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Settings, Volume2, VolumeX, Bell, BellOff } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { TimerPreferences } from '@/types/timer';
-import { useNotification } from '@/hooks/useNotifications';
+import { useNotification } from '@/hooks/useNotification';
 
 interface TimerSettingsProps {
   preferences: TimerPreferences;

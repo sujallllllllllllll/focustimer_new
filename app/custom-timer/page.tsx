@@ -48,80 +48,122 @@ export default function CustomTimerPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-1 container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto space-y-12">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-              Custom Timer - Your Perfect Schedule
-            </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
+    <div className="min-h-screen flex flex-col relative overflow-hidden">
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-violet-50 to-indigo-50 dark:from-gray-900 dark:via-purple-950 dark:to-gray-900"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-200 dark:bg-purple-500 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-violet-200 dark:bg-violet-500 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-indigo-200 dark:bg-indigo-500 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+      </div>
+
+      <main className="flex-1 container mx-auto px-4 py-6 sm:py-8 md:py-12 relative">
+        <div className="max-w-4xl mx-auto space-y-8 sm:space-y-10 md:space-y-12">
+          <div className="text-center space-y-2 sm:space-y-4 animate-fade-in">
+            <div className="inline-block">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
+                Custom Timer
+              </h1>
+              <div className="h-1 w-24 sm:w-32 mx-auto bg-gradient-to-r from-purple-500 to-violet-500 rounded-full mt-2"></div>
+            </div>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 font-medium">
+              Your Perfect Schedule
+            </p>
+            <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
               Create your ideal work and break intervals
             </p>
           </div>
 
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 dark:bg-purple-900/30 rounded-full">
-              <span className="text-sm font-medium text-purple-900 dark:text-purple-100">
+          <div className="text-center animate-fade-in animation-delay-200">
+            <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-lg border border-purple-200 dark:border-purple-800/50 hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></div>
+              <span className="text-xs sm:text-sm font-semibold text-purple-900 dark:text-purple-100 tracking-wide">
                 Session {currentCycle}
               </span>
             </div>
           </div>
 
-          <TimerDisplay
-            timeRemaining={timeRemaining}
-            currentSession={currentSession}
-            displayStyle={preferences.displayStyle}
-            progress={progress}
-          />
+          <div className="animate-fade-in animation-delay-400">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-violet-400 dark:from-purple-600 dark:to-violet-600 rounded-3xl blur-xl opacity-20"></div>
+              <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8 hover:shadow-3xl transition-all duration-500">
+                <TimerDisplay
+                  timeRemaining={timeRemaining}
+                  currentSession={currentSession}
+                  displayStyle={preferences.displayStyle}
+                  progress={progress}
+                />
+              </div>
+            </div>
+          </div>
 
-          <TimerControls
-            status={status}
-            onStart={start}
-            onPause={pause}
-            onReset={reset}
-            onSkip={skip}
-            onPiP={async () => { const v = document.querySelector('video'); if (v && 'pictureInPictureEnabled' in document) { try { if (document.pictureInPictureElement) await document.exitPictureInPicture(); else { await v.play(); await new Promise(r => v.readyState >= 2 ? r(true) : v.addEventListener('loadedmetadata', () => r(true), { once: true })); await v.requestPictureInPicture(); } } catch (e) { console.warn('PiP failed:', e); } } }}
-          />
+          <div className="animate-fade-in animation-delay-600">
+            <TimerControls
+              status={status}
+              onStart={start}
+              onPause={pause}
+              onReset={reset}
+              onSkip={skip}
+              onPiP={async () => { const v = document.querySelector('video'); if (v && 'pictureInPictureEnabled' in document) { try { if (document.pictureInPictureElement) await document.exitPictureInPicture(); else { await v.play(); await new Promise(r => v.readyState >= 2 ? r(true) : v.addEventListener('loadedmetadata', () => r(true), { once: true })); await v.requestPictureInPicture(); } } catch (e) { console.warn('PiP failed:', e); } } }}
+            />
+          </div>
 
-          <TimerSettings
-            preferences={preferences}
-            onPreferencesChange={setPreferences}
-            workDuration={config.workDuration}
-            breakDuration={config.breakDuration}
-            onWorkDurationChange={(duration) =>
-              setConfig({ ...config, workDuration: duration })
-            }
-            onBreakDurationChange={(duration) =>
-              setConfig({ ...config, breakDuration: duration })
-            }
-          />
+          <div className="animate-fade-in animation-delay-800">
+            <TimerSettings
+              preferences={preferences}
+              onPreferencesChange={setPreferences}
+              workDuration={config.workDuration}
+              breakDuration={config.breakDuration}
+              onWorkDurationChange={(duration) =>
+                setConfig({ ...config, workDuration: duration })
+              }
+              onBreakDurationChange={(duration) =>
+                setConfig({ ...config, breakDuration: duration })
+              }
+            />
+          </div>
 
-          <article className="prose prose-lg dark:prose-invert mx-auto">
-            <h2>Create Your Perfect Timer</h2>
-            <p>
-              Everyone works differently. Use the custom timer to find your optimal 
-              work and break intervals. Experiment with different durations to 
-              discover what works best for your productivity style.
-            </p>
-            <h3>Tips for Custom Intervals:</h3>
-            <ul>
-              <li>Start with shorter intervals and gradually increase</li>
-              <li>Match break length to work intensity (harder work = longer breaks)</li>
-              <li>Consider your natural attention span</li>
-              <li>Adjust based on the type of work you're doing</li>
-            </ul>
-          </article>
+          <div className="animate-fade-in animation-delay-1000">
+            <article className="prose prose-base sm:prose-lg mx-auto px-4 sm:px-0">
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
+                <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-purple-600 to-violet-600 dark:from-purple-400 dark:to-violet-400 bg-clip-text text-transparent mb-4">
+                  Create Your Perfect Timer
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                  Everyone works differently. Use the custom timer to find your optimal 
+                  work and break intervals. Experiment with different durations to 
+                  discover what works best for your productivity style.
+                </p>
+                <h3 className="text-xl sm:text-2xl font-semibold text-purple-700 dark:text-purple-300 mb-3">
+                  Tips for Custom Intervals:
+                </h3>
+                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                  <li>Start with shorter intervals and gradually increase</li>
+                  <li>Match break length to work intensity (harder work = longer breaks)</li>
+                  <li>Consider your natural attention span</li>
+                  <li>Adjust based on the type of work you're doing</li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </div>
       </main>
 
-      <MiniTimer
-        timeRemaining={timeRemaining}
-        status={status}
-        timerName="Custom Timer"
-        onToggle={handleToggle}
-      />
+      <MiniTimer timeRemaining={timeRemaining} status={status} timerName="Custom Timer" onToggle={handleToggle} />
       <PiPTimer timeRemaining={timeRemaining} status={status} timerName="Custom Timer" onToggle={handleToggle} />
+
+      <style jsx>{`
+        @keyframes blob { 0%, 100% { transform: translate(0px, 0px) scale(1); } 33% { transform: translate(30px, -50px) scale(1.1); } 66% { transform: translate(-20px, 20px) scale(0.9); } }
+        @keyframes fade-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-blob { animation: blob 7s infinite; }
+        .animate-fade-in { animation: fade-in 0.6s ease-out forwards; }
+        .animation-delay-200 { animation-delay: 0.2s; opacity: 0; }
+        .animation-delay-400 { animation-delay: 0.4s; opacity: 0; }
+        .animation-delay-600 { animation-delay: 0.6s; opacity: 0; }
+        .animation-delay-800 { animation-delay: 0.8s; opacity: 0; }
+        .animation-delay-1000 { animation-delay: 1s; opacity: 0; }
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+      `}</style>
     </div>
   );
 }
