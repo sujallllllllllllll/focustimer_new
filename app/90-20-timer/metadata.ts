@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '90/20 Timer - Ultimate Deep Work Sessions',
-  description: 'Free 90/20 timer based on ultradian rhythms. 90 minutes of ultimate focus followed by 20-minute breaks for maximum productivity.',
-  keywords: ['90/20 timer', 'ultradian rhythm', 'deep work', 'focus timer', 'productivity timer'],
+  title: '90/20 Timer Online - Ultradian Rhythm Focus Sessions | TimeMaster',
+  description: 'Free 90/20 timer based on natural ultradian rhythms. 90-minute deep work with 20-minute breaks. Ultimate productivity timer for creative work. No signup.',
+  keywords: '90 20 timer online, ultradian rhythm timer, 90 minute focus timer, creative work timer, flow state timer free',
   openGraph: {
-    title: '90/20 Timer - Ultimate Deep Work Sessions',
-    description: 'Free 90/20 timer based on ultradian rhythms. 90 minutes of ultimate focus followed by 20-minute breaks.',
-    images: ['/og-90-20.png'],
+    title: '90/20 Timer Online - Ultradian Rhythm Focus Sessions',
+    description: 'Free 90/20 timer based on natural ultradian rhythms. 90-minute deep work with 20-minute breaks.',
+    type: 'website',
   },
 };

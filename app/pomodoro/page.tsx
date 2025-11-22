@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { TimerDisplay } from '@/components/timer/TimerDisplay';
@@ -30,8 +30,8 @@ export default function PomodoroPage() {
       autoStartBreak: preferences.autoStartNextSession,
       autoStartWork: preferences.autoStartNextSession,
     },
-    onSessionComplete: (session: SessionType) => {
-      console.log(`${session} session completed`);
+    onSessionComplete: (_session: SessionType) => {
+      // Session completed
     },
   });
 
@@ -108,7 +108,16 @@ export default function PomodoroPage() {
               onPause={pause}
               onReset={reset}
               onSkip={skip}
-              onPiP={async () => { const v = document.querySelector('video'); if (v && 'pictureInPictureEnabled' in document) { try { if (document.pictureInPictureElement) await document.exitPictureInPicture(); else { await v.play(); await new Promise(r => v.readyState >= 2 ? r(true) : v.addEventListener('loadedmetadata', () => r(true), { once: true })); await v.requestPictureInPicture(); } } catch (e) { console.warn('PiP failed:', e); } } }}
+              onPiP={() => {
+                const video = document.querySelector('video');
+                if (video && 'pictureInPictureEnabled' in document) {
+                  if (document.pictureInPictureElement) {
+                    document.exitPictureInPicture();
+                  } else {
+                    video.requestPictureInPicture().catch(console.warn);
+                  }
+                }
+              }}
             />
           </div>
 
@@ -128,46 +137,101 @@ export default function PomodoroPage() {
           </div>
 
           <div className="animate-fade-in animation-delay-1000">
-            <article className="prose prose-base sm:prose-lg mx-auto px-4 sm:px-0">
+            <article className="prose prose-base sm:prose-lg mx-auto px-4 sm:px-0 space-y-8">
               <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
                 <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent mb-4">
-                  What is the Pomodoro Technique?
+                  Free Online Pomodoro Timer - No Signup Required
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                  The Pomodoro Technique is a time management method developed by Francesco Cirillo
-                  in the late 1980s. It uses a timer to break work into focused intervals of 25
-                  minutes, separated by short 5-minute breaks. After completing four "pomodoros,"
-                  you take a longer 15-20 minute break.
+                  This free online Pomodoro timer helps you boost productivity with the proven 25/5 technique. 
+                  No registration needed - start focusing immediately with our web-based timer that works offline.
                 </p>
+
                 <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 dark:text-blue-300 mb-3">
-                  How to Use This Pomodoro Timer
+                  How to Use This Free Pomodoro Timer Online
                 </h3>
                 <ol className="space-y-2 text-gray-700 dark:text-gray-300 mb-6">
-                  <li>Click the "Start" button to begin your 25-minute focus session</li>
-                  <li>Work on a single task until the timer rings</li>
-                  <li>Take a 5-minute break when prompted</li>
-                  <li>After 4 pomodoros, enjoy a longer 15-minute break</li>
+                  <li><strong>Step 1:</strong> Click "Start" to begin your 25-minute focus session</li>
+                  <li><strong>Step 2:</strong> Work on one task until the timer notification sounds</li>
+                  <li><strong>Step 3:</strong> Take a 5-minute break when prompted</li>
+                  <li><strong>Step 4:</strong> Repeat 4 cycles, then enjoy a 15-minute long break</li>
+                  <li><strong>Step 5:</strong> Track your progress and adjust settings as needed</li>
                 </ol>
+
                 <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 dark:text-blue-300 mb-3">
-                  Benefits of the Pomodoro Technique
+                  What is the Pomodoro Technique?
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                  The Pomodoro Technique is a time management method developed by Francesco Cirillo. 
+                  This productivity timer breaks work into 25-minute focused intervals with 5-minute breaks, 
+                  helping millions of people worldwide improve their focus and reduce procrastination.
+                </p>
+
+                <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 dark:text-blue-300 mb-3">
+                  Benefits of Using Our Online Focus Timer
                 </h3>
                 <ul className="space-y-2 text-gray-700 dark:text-gray-300 mb-6">
-                  <li>Improved focus and concentration</li>
-                  <li>Reduced mental fatigue through regular breaks</li>
-                  <li>Better time awareness and estimation</li>
-                  <li>Increased motivation through achievable goals</li>
-                  <li>Decreased procrastination and distractions</li>
+                  <li>âœ“ Improved concentration and deep work sessions</li>
+                  <li>âœ“ Reduced mental fatigue with structured breaks</li>
+                  <li>âœ“ Better time estimation and project planning</li>
+                  <li>âœ“ Increased motivation through achievable 25-minute goals</li>
+                  <li>âœ“ Decreased procrastination and social media distractions</li>
+                  <li>âœ“ Works offline - no internet required after loading</li>
                 </ul>
-                <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 dark:text-blue-300 mb-3">
-                  Tips for Maximum Productivity
+              </div>
+
+              {/* FAQ Section */}
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-blue-700 dark:text-blue-300 mb-6">
+                  Frequently Asked Questions - Pomodoro Timer
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">
-                  To get the most out of this Pomodoro timer, eliminate distractions before starting
-                  each session. Turn off notifications, close unnecessary tabs, and communicate your
-                  focus time to others. Use the break time to step away from your desk, stretch, or
-                  grab a drink. Customize the timer duration in settings if 25 minutes doesn't fit
-                  your workflow.
-                </p>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                      Is this Pomodoro timer completely free?
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Yes! Our online Pomodoro timer is 100% free with no signup, no ads, and no premium features. 
+                      Use it unlimited times for your productivity needs.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                      Does the timer work offline?
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Yes! Once loaded, this web-based Pomodoro timer works offline. Your sessions continue 
+                      even if you lose internet connection or switch browser tabs.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                      Can I customize the 25-minute timer duration?
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Absolutely! Click "Settings" to adjust work and break durations. While 25/5 is the 
+                      traditional Pomodoro technique, you can customize it to fit your workflow.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                      Will I get notifications when the timer ends?
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Yes! Enable desktop notifications and sound alerts in settings. You'll get notified 
+                      even when the browser tab is inactive or minimized.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                      How is this different from other online timers?
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Our focus timer is privacy-first (no tracking), works offline, has Picture-in-Picture mode, 
+                      and includes multiple productivity techniques beyond just Pomodoro - all in one free web app.
+                    </p>
+                  </div>
+                </div>
               </div>
             </article>
           </div>
@@ -175,7 +239,7 @@ export default function PomodoroPage() {
       </main>
 
       <MiniTimer timeRemaining={timeRemaining} status={status} timerName="Pomodoro" onToggle={handleToggle} />
-      <PiPTimer timeRemaining={timeRemaining} status={status} timerName="Pomodoro" onToggle={handleToggle} />
+      <PiPTimer timeRemaining={timeRemaining} status={status} timerName="Pomodoro" />
 
       <style jsx>{`
         @keyframes blob { 0%, 100% { transform: translate(0px, 0px) scale(1); } 33% { transform: translate(30px, -50px) scale(1.1); } 66% { transform: translate(-20px, 20px) scale(0.9); } }

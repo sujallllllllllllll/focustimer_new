@@ -1,12 +1,14 @@
 {
-  "name": "timemaster",
+  "name": "focustimer",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint",
+    "export": "next build",
+    "clean": "rm -rf .next out node_modules/.cache"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",

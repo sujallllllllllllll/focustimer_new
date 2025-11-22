@@ -20,9 +20,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           {
             'btn-primary': variant === 'primary',
             'btn-secondary': variant === 'secondary',
-            'border-2 border-gray-300 bg-transparent hover:bg-gray-50 dark:border-gray-600 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300': variant === 'outline',
-            'bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300': variant === 'ghost',
-            'bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 shadow-md hover:shadow-lg': variant === 'danger',
+            'border-2 border-[#E2E8F0] bg-transparent hover:bg-[#F1F5F9] hover:border-[#CBD5E1] dark:border-gray-600 dark:hover:bg-gray-800 text-transparent hover:text-[#1E293B] dark:text-gray-300 dark:hover:text-gray-300': variant === 'outline',
+            'bg-transparent hover:bg-[#F1F5F9] dark:hover:bg-gray-800 text-transparent hover:text-[#1E293B] dark:text-gray-300 dark:hover:text-gray-300': variant === 'ghost',
+            'bg-[#EF4444] text-white hover:bg-[#DC2626] shadow-md hover:shadow-lg': variant === 'danger',
           },
           {
             'text-sm px-3 py-1.5 min-h-[36px]': size === 'sm',

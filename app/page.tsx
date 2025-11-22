@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Clock, Timer, Zap, Settings2, TrendingUp, Hourglass } from 'lucide-react';
 import { StructuredData } from '@/components/seo/StructuredData';
+import { ComparisonTable } from '@/components/ComparisonTable';
 
 export default function HomePage() {
   return (
@@ -23,12 +24,11 @@ export default function HomePage() {
           <div className="container mx-auto max-w-4xl text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6 leading-tight">
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-                Focus Better
-              </span>{' '}
-              with TimeMaster
+                Focus Better with FocusTimer
+              </span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto">
-              Multiple productivity timers in one place. No signup, no tracking, completely free.
+              Every Minute Counts. Multiple productivity timers in one place. No signup, no tracking, completely free.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
               <Link
@@ -105,13 +105,20 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Comparison Table */}
+        <section className="py-12 sm:py-16 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <ComparisonTable />
+          </div>
+        </section>
+
         {/* Features */}
         <section className="py-12 sm:py-16 px-4">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-8 sm:mb-12">
               Why Choose{' '}
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-                TimeMaster?
+                FocusTimer?
               </span>
             </h2>
             

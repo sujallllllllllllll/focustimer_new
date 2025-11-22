@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Flowtime Timer - Flexible Focus Sessions',
-  description: 'Free Flowtime timer that adapts to your natural work rhythm. Flexible focus periods with proportional breaks for optimal productivity.',
-  keywords: ['flowtime timer', 'flexible timer', 'adaptive timer', 'flow state', 'productivity'],
+  title: 'Flowtime Timer Free - Flexible Focus Sessions Online | TimeMaster',
+  description: 'Free Flowtime timer with flexible focus sessions. Adaptive productivity timer that follows your natural rhythm. No fixed intervals, just pure flow state.',
+  keywords: 'flowtime timer online, flexible focus timer, adaptive productivity timer, natural rhythm timer, flow state timer free',
   openGraph: {
-    title: 'Flowtime Timer - Flexible Focus Sessions',
-    description: 'Free Flowtime timer that adapts to your natural work rhythm. Flexible focus periods with proportional breaks.',
-    images: ['/og-flowtime.png'],
+    title: 'Flowtime Timer Free - Flexible Focus Sessions Online',
+    description: 'Free Flowtime timer with flexible focus sessions. Adaptive productivity timer that follows your natural rhythm.',
+    type: 'website',
   },
 };

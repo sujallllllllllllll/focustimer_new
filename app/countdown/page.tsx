@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { TimerDisplay } from '@/components/timer/TimerDisplay';
@@ -30,8 +30,8 @@ export default function CountdownPage() {
       autoStartBreak: false,
       autoStartWork: false,
     },
-    onSessionComplete: (session: SessionType) => {
-      console.log(`Countdown completed`);
+    onSessionComplete: (_session: SessionType) => {
+      // Countdown completed
     },
   });
 
@@ -138,7 +138,7 @@ export default function CountdownPage() {
       </main>
 
       <MiniTimer timeRemaining={timeRemaining} status={status} timerName="Countdown" onToggle={handleToggle} />
-      <PiPTimer timeRemaining={timeRemaining} status={status} timerName="Countdown" onToggle={handleToggle} />
+      <PiPTimer timeRemaining={timeRemaining} status={status} timerName="Countdown" />
 
       <style jsx>{`
         @keyframes blob { 0%, 100% { transform: translate(0px, 0px) scale(1); } 33% { transform: translate(30px, -50px) scale(1.1); } 66% { transform: translate(-20px, 20px) scale(0.9); } }

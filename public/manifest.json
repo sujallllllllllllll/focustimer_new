@@ -1,7 +1,7 @@
 {
-  "name": "TimeMaster - Focus Timer Collection",
-  "short_name": "TimeMaster",
-  "description": "Free collection of productivity timers: Pomodoro, 50/10, 60/10, 90/20, Flowtime, and more.",
+  "name": "FocusTimer - Every Minute Counts",
+  "short_name": "FocusTimer",
+  "description": "Focus Better with FocusTimer — Every Minute Counts. Free productivity timers: Pomodoro, 50/10, 60/10, 90/20, Flowtime, and more.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

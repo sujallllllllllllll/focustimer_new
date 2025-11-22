@@ -30,8 +30,8 @@ export default function Timer5010Page() {
       autoStartBreak: preferences.autoStartNextSession,
       autoStartWork: preferences.autoStartNextSession,
     },
-    onSessionComplete: (session: SessionType) => {
-      console.log(`${session} session completed`);
+    onSessionComplete: (_session: SessionType) => {
+      // Session completed
     },
   });
 
@@ -123,25 +123,83 @@ export default function Timer5010Page() {
           </div>
 
           <div className="animate-fade-in animation-delay-1000">
-            <article className="prose prose-base sm:prose-lg mx-auto px-4 sm:px-0">
+            <article className="prose prose-base sm:prose-lg mx-auto px-4 sm:px-0 space-y-8">
               <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
                 <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 bg-clip-text text-transparent mb-4">
-                  About the 50/10 Timer
+                  Free 50/10 Timer Online - Extended Focus Sessions
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                  The 50/10 technique extends traditional focus periods to 50 minutes, 
-                  perfect for deep work that requires sustained concentration. The 10-minute 
-                  breaks provide adequate recovery time without losing momentum.
+                  This free online 50/10 timer is perfect for deep work sessions requiring extended concentration. 
+                  Work for 50 minutes with 10-minute breaks - ideal for complex tasks and creative projects.
                 </p>
+
                 <h3 className="text-xl sm:text-2xl font-semibold text-green-700 dark:text-green-300 mb-3">
-                  Best For:
+                  How to Use the 50/10 Deep Work Timer
                 </h3>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li>Complex problem-solving tasks</li>
-                  <li>Creative work and design</li>
-                  <li>Research and analysis</li>
-                  <li>Writing and content creation</li>
+                <ol className="space-y-2 text-gray-700 dark:text-gray-300 mb-6">
+                  <li><strong>Step 1:</strong> Set up your workspace and eliminate distractions</li>
+                  <li><strong>Step 2:</strong> Click "Start" to begin your 50-minute deep work session</li>
+                  <li><strong>Step 3:</strong> Focus on one complex task for the full 50 minutes</li>
+                  <li><strong>Step 4:</strong> Take a 10-minute break when the timer ends</li>
+                  <li><strong>Step 5:</strong> Repeat cycles based on your energy levels</li>
+                </ol>
+
+                <h3 className="text-xl sm:text-2xl font-semibold text-green-700 dark:text-green-300 mb-3">
+                  Perfect for Extended Focus Work
+                </h3>
+                <ul className="space-y-2 text-gray-700 dark:text-gray-300 mb-6">
+                  <li>✓ Complex problem-solving and analysis</li>
+                  <li>✓ Creative work and design projects</li>
+                  <li>✓ Research and academic writing</li>
+                  <li>✓ Programming and software development</li>
+                  <li>✓ Content creation and editing</li>
+                  <li>✓ Strategic planning and brainstorming</li>
                 </ul>
+              </div>
+
+              {/* FAQ Section */}
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-green-700 dark:text-green-300 mb-6">
+                  50/10 Timer FAQ
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                      Why use 50/10 instead of 25/5 Pomodoro?
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      The 50/10 timer is better for deep work requiring extended concentration. While Pomodoro's 
+                      25 minutes work for quick tasks, 50 minutes allow you to enter flow state for complex work.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                      Is 50 minutes too long for focus sessions?
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Not for deep work! Research shows that it takes 15-20 minutes to reach peak concentration. 
+                      The 50-minute sessions maximize your time in this focused state.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                      What should I do during 10-minute breaks?
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Step away from your workspace, stretch, hydrate, or take a short walk. Avoid screens 
+                      and social media to give your brain a proper rest before the next session.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                      How many 50/10 cycles should I do per day?
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Most people can handle 3-4 cycles (2.5-3.5 hours of deep work) per day. Start with 
+                      2 cycles and gradually increase based on your energy and focus capacity.
+                    </p>
+                  </div>
+                </div>
               </div>
             </article>
           </div>
@@ -149,7 +207,7 @@ export default function Timer5010Page() {
       </main>
 
       <MiniTimer timeRemaining={timeRemaining} status={status} timerName="50/10 Timer" onToggle={handleToggle} />
-      <PiPTimer timeRemaining={timeRemaining} status={status} timerName="50/10 Timer" onToggle={handleToggle} />
+      <PiPTimer timeRemaining={timeRemaining} status={status} timerName="50/10 Timer" />
 
       <style jsx>{`
         @keyframes blob { 0%, 100% { transform: translate(0px, 0px) scale(1); } 33% { transform: translate(30px, -50px) scale(1.1); } 66% { transform: translate(-20px, 20px) scale(0.9); } }

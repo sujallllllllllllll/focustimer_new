@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { TimerDisplay } from '@/components/timer/TimerDisplay';
@@ -30,8 +30,8 @@ export default function FlowtimePage() {
       autoStartBreak: preferences.autoStartNextSession,
       autoStartWork: preferences.autoStartNextSession,
     },
-    onSessionComplete: (session: SessionType) => {
-      console.log(`${session} session completed`);
+    onSessionComplete: (_session: SessionType) => {
+      // Session completed
     },
   });
 
@@ -109,7 +109,7 @@ export default function FlowtimePage() {
                 onPause={pause}
                 onReset={reset}
                 onSkip={skip}
-                onPiP={async () => { const v = document.querySelector('video'); if (v && 'pictureInPictureEnabled' in document) { try { if (document.pictureInPictureElement) await document.exitPictureInPicture(); else { await v.play(); await new Promise(r => v.readyState >= 2 ? r(true) : v.addEventListener('loadedmetadata', () => r(true), { once: true })); await v.requestPictureInPicture(); } } catch (e) { console.warn('PiP failed:', e); } } }}
+onPiP={() => { const video = document.querySelector('video'); if (video && 'pictureInPictureEnabled' in document) { if (document.pictureInPictureElement) { document.exitPictureInPicture(); } else { video.requestPictureInPicture().catch(console.warn); } } }}
               />
             </div>
           </div>
@@ -172,7 +172,7 @@ export default function FlowtimePage() {
         timerName="Flowtime"
         onToggle={handleToggle}
       />
-      <PiPTimer timeRemaining={timeRemaining} status={status} timerName="Flowtime" onToggle={handleToggle} />
+      <PiPTimer timeRemaining={timeRemaining} status={status} timerName="Flowtime" />
 
       <style jsx>{`
         @keyframes blob {

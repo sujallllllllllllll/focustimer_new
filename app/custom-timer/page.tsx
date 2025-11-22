@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { TimerDisplay } from '@/components/timer/TimerDisplay';
@@ -30,8 +30,8 @@ export default function CustomTimerPage() {
       autoStartBreak: preferences.autoStartNextSession,
       autoStartWork: preferences.autoStartNextSession,
     },
-    onSessionComplete: (session: SessionType) => {
-      console.log(`${session} session completed`);
+    onSessionComplete: (_session: SessionType) => {
+      // Session completed
     },
   });
 
@@ -149,7 +149,7 @@ export default function CustomTimerPage() {
       </main>
 
       <MiniTimer timeRemaining={timeRemaining} status={status} timerName="Custom Timer" onToggle={handleToggle} />
-      <PiPTimer timeRemaining={timeRemaining} status={status} timerName="Custom Timer" onToggle={handleToggle} />
+      <PiPTimer timeRemaining={timeRemaining} status={status} timerName="Custom Timer" />
 
       <style jsx>{`
         @keyframes blob { 0%, 100% { transform: translate(0px, 0px) scale(1); } 33% { transform: translate(30px, -50px) scale(1.1); } 66% { transform: translate(-20px, 20px) scale(0.9); } }

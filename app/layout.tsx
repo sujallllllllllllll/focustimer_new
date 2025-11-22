@@ -10,17 +10,17 @@ const inter = Inter({ subsets: ['latin'] });
 
 // Your existing SEO metadata
 export const metadata: Metadata = {
-  metadataBase: new URL('https://timemaster.app'),
+  metadataBase: new URL('https://focustimer.shop'),
   title: {
-    default: 'TimeMaster - Focus Timer Collection for Productivity',
-    template: '%s | TimeMaster',
+    default: 'FocusTimer - Every Minute Counts',
+    template: '%s | FocusTimer',
   },
   description:
-    'Free collection of productivity timers: Pomodoro, 50/10, 60/10, 90/20, Flowtime, and more. No signup required. Boost your focus and productivity today.',
+    'Focus Better with FocusTimer — Every Minute Counts. Free productivity timers: Pomodoro, 50/10, 60/10, 90/20, Flowtime, and more. No signup required.',
   keywords: ['focus timer', 'productivity timer', 'pomodoro', 'time management', 'work timer'],
-  authors: [{ name: 'TimeMaster' }],
-  creator: 'TimeMaster',
-  publisher: 'TimeMaster',
+  authors: [{ name: 'FocusTimer' }],
+  creator: 'FocusTimer',
+  publisher: 'FocusTimer',
   robots: {
     index: true,
     follow: true,
@@ -35,27 +35,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://timemaster.app',
-    siteName: 'TimeMaster',
-    title: 'TimeMaster - Focus Timer Collection for Productivity',
+    url: 'https://focustimer.shop',
+    siteName: 'FocusTimer',
+    title: 'FocusTimer - Every Minute Counts',
     description:
-      'Free collection of productivity timers: Pomodoro, 50/10, 60/10, 90/20, Flowtime, and more. No signup required.',
+      'Focus Better with FocusTimer — Every Minute Counts. Free productivity timers: Pomodoro, 50/10, 60/10, 90/20, Flowtime, and more.',
     images: [
       {
         url: '/og-home.png',
         width: 1200,
         height: 630,
-        alt: 'TimeMaster - Focus Timer Collection',
+        alt: 'FocusTimer - Every Minute Counts',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TimeMaster - Focus Timer Collection for Productivity',
+    title: 'FocusTimer - Every Minute Counts',
     description:
-      'Free collection of productivity timers: Pomodoro, 50/10, 60/10, 90/20, Flowtime, and more.',
+      'Focus Better with FocusTimer — Every Minute Counts. Free productivity timers for better focus.',
     images: ['/og-home.png'],
-    creator: '@timemaster',
+    creator: '@focustimer',
   },
   icons: {
     icon: '/icons/favicon.ico',
@@ -79,6 +79,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="google-adsense-account" content="ca-pub-6308926394211577" />
         <StructuredData type="WebApplication" page="home" />
 
         {/* 🔥 Inline critical CSS */}
@@ -87,7 +88,7 @@ export default function RootLayout({
 
       <body className={inter.className}>
         <ThemeProvider>
-          <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900 transition-colors">
+          <div className="flex flex-col min-h-screen transition-colors">
             <Header />
             {children}
             <Footer />

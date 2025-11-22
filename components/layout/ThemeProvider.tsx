@@ -8,42 +8,13 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const { preferences, loadFromStorage } = useTimerStore();
+  const { loadFromStorage } = useTimerStore();
 
   useEffect(() => {
     loadFromStorage();
+    // Force dark mode
+    document.documentElement.classList.add('dark');
   }, []);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
-    const root = document.documentElement;
-    
-    if (preferences.theme === 'dark') {
-      root.classList.add('dark');
-    } else if (preferences.theme === 'light') {
-      root.classList.remove('dark');
-    } else {
-      // System theme
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      if (mediaQuery.matches) {
-        root.classList.add('dark');
-      } else {
-        root.classList.remove('dark');
-      }
-
-      const handleChange = (e: MediaQueryListEvent) => {
-        if (e.matches) {
-          root.classList.add('dark');
-        } else {
-          root.classList.remove('dark');
-        }
-      };
-
-      mediaQuery.addEventListener('change', handleChange);
-      return () => mediaQuery.removeEventListener('change', handleChange);
-    }
-  }, [preferences.theme]);
 
   return <>{children}</>;
 }

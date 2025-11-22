@@ -11,14 +11,24 @@ export function useSound() {
     
     try {
       const audio = new Audio(`/sounds/alerts/${soundFile}.mp3`);
-      audio.volume = 0.7;
-      audio.play().catch((error) => {
-        console.warn('Failed to play sound:', error);
-      });
+      audio.volume = preferences.volume;
+      audio.play().catch(() => {});
     } catch (error) {
-      console.warn('Sound not available:', error);
+      // Sound file not available
     }
-  }, [preferences.soundEnabled, preferences.soundId]);
+  }, [preferences.soundEnabled, preferences.soundId, preferences.volume]);
 
-  return { playSound };
+  const previewSound = useCallback((soundId: string) => {
+    if (typeof window === 'undefined') return;
+    
+    try {
+      const audio = new Audio(`/sounds/alerts/${soundId}.mp3`);
+      audio.volume = preferences.volume;
+      audio.play().catch(() => {});
+    } catch (error) {
+      // Sound file not available
+    }
+  }, [preferences.volume]);
+
+  return { playSound, previewSound };
 }

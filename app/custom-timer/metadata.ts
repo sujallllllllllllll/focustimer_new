@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Custom Timer - Create Your Perfect Schedule',
-  description: 'Free custom timer with adjustable work and break intervals. Create your ideal productivity schedule with personalized timing.',
-  keywords: ['custom timer', 'adjustable timer', 'productivity timer', 'personalized timer', 'time management'],
+  title: 'Custom Timer Online Free - Create Your Perfect Schedule | TimeMaster',
+  description: 'Free custom timer to create your perfect work schedule. Set any duration for work and breaks. Personalized productivity timer with no signup required.',
+  keywords: 'custom timer online free, personalized productivity timer, create custom work schedule, flexible timer intervals, custom focus timer',
   openGraph: {
-    title: 'Custom Timer - Create Your Perfect Schedule',
-    description: 'Free custom timer with adjustable work and break intervals. Create your ideal productivity schedule.',
-    images: ['/og-custom.png'],
+    title: 'Custom Timer Online Free - Create Your Perfect Schedule',
+    description: 'Free custom timer to create your perfect work schedule. Set any duration for work and breaks.',
+    type: 'website',
   },
 };

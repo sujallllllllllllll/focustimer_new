@@ -13,6 +13,7 @@ interface TimerStore {
 const defaultPreferences: TimerPreferences = {
   soundEnabled: true,
   soundId: 'bell',
+  volume: 0.7,
   notificationsEnabled: true,
   vibrationEnabled: true,
   theme: 'system',

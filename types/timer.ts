@@ -35,6 +35,7 @@ export interface TimerState {
 export interface TimerPreferences {
   soundEnabled: boolean;
   soundId: string;
+  volume: number;
   notificationsEnabled: boolean;
   vibrationEnabled: boolean;
   theme: 'light' | 'dark' | 'system';

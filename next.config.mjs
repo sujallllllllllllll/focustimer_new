@@ -6,18 +6,27 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Static export for client-side only app
+  // Optimized for Vercel deployment
+  reactStrictMode: true,
+  
+  // Image optimization
   images: {
-    unoptimized: true, // Required for static export
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
-  // Optional: Configure trailing slashes
-  trailingSlash: true,
+  // Performance optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? {
+      exclude: ['error', 'warn'],
+    } : false,
+  },
 
-  // Optional: Asset prefix for CDN
-  // assetPrefix: 'https://cdn.timemaster.app',
-
-  // Optimize bundle (swcMinify is enabled by default in Next.js 13+)
+  // Experimental features for better performance
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+  },
 };
 
 // Wrap config with bundle analyzer
