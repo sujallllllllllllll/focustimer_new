@@ -11,7 +11,7 @@ export function AmbientSoundSettings() {
 
   useEffect(() => {
     // Load saved preferences
-    const saved = localStorage.getItem('timemaster-ambient');
+    const saved = localStorage.getItem('focustimer-ambient');
     if (saved) {
       const { sound, vol } = JSON.parse(saved);
       setSelectedSound(sound || 'none');
@@ -38,7 +38,7 @@ export function AmbientSoundSettings() {
   };
 
   const savePreferences = (sound: string, vol: number) => {
-    localStorage.setItem('timemaster-ambient', JSON.stringify({ sound, vol }));
+    localStorage.setItem('focustimer-ambient', JSON.stringify({ sound, vol }));
   };
 
   return (

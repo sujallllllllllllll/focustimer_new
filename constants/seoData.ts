@@ -1,6 +1,6 @@
 export const SEO_DATA = {
   pomodoro: {
-    title: 'Pomodoro Timer - 25/5 Focus Technique | TimeMaster',
+    title: 'Pomodoro Timer - 25/5 Focus Technique | FocusTimer',
     description:
       'Free online Pomodoro timer with 25-minute focus sessions and 5-minute breaks. Boost productivity with the proven Pomodoro Technique. No signup required.',
     keywords: 'pomodoro timer, 25 minute timer, focus timer, productivity timer, pomodoro technique',
@@ -26,7 +26,7 @@ export const SEO_DATA = {
     ],
   },
   '50-10': {
-    title: '50/10 Timer - Extended Focus Sessions | TimeMaster',
+    title: '50/10 Timer - Extended Focus Sessions | FocusTimer',
     description:
       'Online 50/10 timer for extended concentration. Work for 50 minutes, break for 10. Perfect for deep work and complex tasks. Free productivity tool.',
         keywords: '50 10 timer, 50 minute timer, extended focus, deep work timer, productivity timer',
@@ -52,7 +52,7 @@ export const SEO_DATA = {
     ],
   },
   '60-10': {
-    title: '60/10 Timer - Hour Focus Blocks | TimeMaster',
+    title: '60/10 Timer - Hour Focus Blocks | FocusTimer',
     description:
       'Free 60/10 timer for hour-long focus sessions. Work 60 minutes, break 10. Maximize deep work with this online productivity timer.',
     keywords: '60 10 timer, hour timer, 60 minute focus, hour block timer, productivity',
@@ -78,7 +78,7 @@ export const SEO_DATA = {
     ],
   },
   '90-20': {
-    title: '90/20 Timer - Deep Work Sessions | TimeMaster',
+    title: '90/20 Timer - Deep Work Sessions | FocusTimer',
     description:
       'Ultimate deep work timer: 90 minutes of focused work, 20 minutes of rest. Based on ultradian rhythms for maximum productivity. Free online timer.',
     keywords: '90 20 timer, 90 minute timer, deep work, ultradian rhythm, focus timer',
@@ -104,7 +104,7 @@ export const SEO_DATA = {
     ],
   },
   flowtime: {
-    title: 'Flowtime Timer - Flexible Focus Method | TimeMaster',
+    title: 'Flowtime Timer - Flexible Focus Method | FocusTimer',
     description:
       'Flowtime technique timer that adapts to your natural focus. Work as long as you can focus, take proportional breaks. Flexible productivity timer.',
     keywords: 'flowtime timer, flexible timer, flow state, adaptive focus, productivity',
@@ -130,7 +130,7 @@ export const SEO_DATA = {
     ],
   },
   custom: {
-    title: 'Custom Timer - Your Personal Focus Timer | TimeMaster',
+    title: 'Custom Timer - Your Personal Focus Timer | FocusTimer',
     description:
       'Create your custom work-break timer. Set any duration for focus sessions and breaks. Flexible productivity timer for your unique workflow.',
     keywords: 'custom timer, personalized timer, flexible timer, work break timer',
@@ -156,7 +156,7 @@ export const SEO_DATA = {
     ],
   },
   stopwatch: {
-    title: 'Stopwatch - Count Up Timer | TimeMaster',
+    title: 'Stopwatch - Count Up Timer | FocusTimer',
     description:
       'Simple online stopwatch timer. Track time spent on tasks. Perfect for time tracking, workouts, and productivity measurement.',
     keywords: 'stopwatch, count up timer, time tracker, online stopwatch',
@@ -182,7 +182,7 @@ export const SEO_DATA = {
     ],
   },
   countdown: {
-    title: 'Countdown Timer - Simple Time Countdown | TimeMaster',
+    title: 'Countdown Timer - Simple Time Countdown | FocusTimer',
     description:
       'Free online countdown timer. Set any duration and count down to zero. Perfect for meetings, presentations, cooking, and time management.',
     keywords: 'countdown timer, online timer, simple timer, time countdown',
@@ -208,11 +208,11 @@ export const SEO_DATA = {
     ],
   },
   home: {
-    title: 'TimeMaster - Focus Timer Collection for Productivity',
+    title: 'FocusTimer - Every Minute Counts for Productivity',
     description:
       'Free collection of productivity timers: Pomodoro, 50/10, 60/10, 90/20, Flowtime, and more. No signup required. Boost your focus and productivity today.',
     keywords: 'focus timer, productivity timer, pomodoro, time management, work timer',
-    h1: 'TimeMaster - Focus Timer Collection',
+    h1: 'FocusTimer - Every Minute Counts',
     canonical: '/',
     ogImage: '/og-home.png',
   },

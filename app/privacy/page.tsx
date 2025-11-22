@@ -41,7 +41,7 @@ export default function PrivacyPage() {
                   </span>
                 </h2>
                 <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-                  TimeMaster is built with privacy as a core principle. We believe your 
+                  FocusTimer is built with privacy as a core principle. We believe your 
                   productivity data should remain private and under your control.
                 </p>
               </div>
@@ -103,7 +103,7 @@ export default function PrivacyPage() {
                     </span>
                   </h2>
                   <p className="text-gray-700 dark:text-gray-300 text-base">
-                    TimeMaster does not use cookies for tracking or data collection. Any 
+                    FocusTimer does not use cookies for tracking or data collection. Any 
                     browser storage is limited to essential functionality like saving your 
                     timer preferences.
                   </p>
@@ -113,7 +113,7 @@ export default function PrivacyPage() {
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">Third-Party Services</h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  TimeMaster is a client-side application that runs entirely in your browser. 
+                  FocusTimer is a client-side application that runs entirely in your browser. 
                   We do not integrate with third-party services that could access your data.
                 </p>
               </div>

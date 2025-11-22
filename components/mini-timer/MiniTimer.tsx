@@ -30,11 +30,11 @@ export function MiniTimer({ timeRemaining, status, timerName, onToggle }: MiniTi
     if (isRunning) {
       document.title = `${formatTime(timeRemaining)} - ${timerName}`;
     } else {
-      document.title = 'TimeMaster - Focus Timer Collection';
+      document.title = 'FocusTimer - Every Minute Counts';
     }
 
     return () => {
-      document.title = 'TimeMaster - Focus Timer Collection';
+      document.title = 'FocusTimer - Every Minute Counts';
     };
   }, [timeRemaining, timerName, isRunning]);
 

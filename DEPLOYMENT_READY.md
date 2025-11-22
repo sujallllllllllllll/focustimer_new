@@ -10,7 +10,7 @@
    - ✅ Kept only production-ready assets
 
 2. **Updated Domain Configuration**
-   - ✅ Changed all URLs from timemaster.app → focustimer.shop
+   - ✅ Changed all URLs from focustimer.app → focustimer.shop
    - ✅ Updated app/layout.tsx metadata
    - ✅ Updated app/sitemap.ts
    - ✅ Updated app/robots.ts

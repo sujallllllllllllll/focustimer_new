@@ -16,7 +16,7 @@ export function DataManagement() {
     
     const a = document.createElement('a');
     a.href = url;
-    a.download = `timemaster-backup-${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `focustimer-backup-${new Date().toISOString().split('T')[0]}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

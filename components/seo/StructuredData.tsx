@@ -8,9 +8,9 @@ export function StructuredData({ type, page }: StructuredDataProps) {
     const schema = {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
-      name: 'TimeMaster',
+      name: 'FocusTimer',
       description: 'Free collection of productivity timers: Pomodoro, 50/10, 60/10, 90/20, Flowtime, and more.',
-      url: 'https://timemaster.app',
+      url: 'https://focustimer.app',
       applicationCategory: 'ProductivityApplication',
       operatingSystem: 'Web Browser',
       offers: {
@@ -44,7 +44,7 @@ export function StructuredData({ type, page }: StructuredDataProps) {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://timemaster.app',
+          item: 'https://focustimer.app',
         },
       ],
     };

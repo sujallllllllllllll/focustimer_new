@@ -40,7 +40,7 @@ export const useTimerStore = create<TimerStore>((set, get) => ({
     if (typeof window === 'undefined') return;
 
     try {
-      const stored = localStorage.getItem('timemaster-preferences');
+      const stored = localStorage.getItem('focustimer-preferences');
       if (stored) {
         const preferences = JSON.parse(stored);
         set({ preferences: { ...defaultPreferences, ...preferences } });
@@ -55,7 +55,7 @@ export const useTimerStore = create<TimerStore>((set, get) => ({
 
     try {
       const { preferences } = get();
-      localStorage.setItem('timemaster-preferences', JSON.stringify(preferences));
+      localStorage.setItem('focustimer-preferences', JSON.stringify(preferences));
     } catch (error) {
       console.error('Failed to save preferences:', error);
     }

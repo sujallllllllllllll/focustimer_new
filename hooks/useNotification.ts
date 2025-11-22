@@ -32,7 +32,7 @@ export function useNotification() {
         body,
         icon: '/icons/icon-192.png',
         badge: '/icons/icon-192.png',
-        tag: 'timemaster-timer',
+        tag: 'focustimer-timer',
         requireInteraction: true,
         ...options,
       });

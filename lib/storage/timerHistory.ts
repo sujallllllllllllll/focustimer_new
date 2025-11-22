@@ -16,7 +16,7 @@ interface TimerHistory {
 }
 
 class TimerHistoryService {
-  private readonly STORAGE_KEY = 'timemaster-history';
+  private readonly STORAGE_KEY = 'focustimer-history';
 
   getHistory(): TimerHistory {
     if (typeof window === 'undefined') {

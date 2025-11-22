@@ -76,11 +76,11 @@ export function applyTheme(theme: CustomTheme) {
   root.style.setProperty('--color-accent', theme.colors.accent);
   
   // Save to localStorage
-  localStorage.setItem('timemaster-color-theme', theme.id);
+  localStorage.setItem('focustimer-color-theme', theme.id);
 }
 
 export function loadSavedTheme(): CustomTheme {
-  const savedId = localStorage.getItem('timemaster-color-theme');
+  const savedId = localStorage.getItem('focustimer-color-theme');
   const theme = PRESET_THEMES.find(t => t.id === savedId) || PRESET_THEMES[0];
   applyTheme(theme);
   return theme;
