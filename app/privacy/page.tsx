@@ -132,10 +132,18 @@ export default function PrivacyPage() {
 
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">Contact</h2>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    If you have questions about this privacy policy, you can contact us through 
-                    our GitHub repository or other public channels.
+                  <p className="text-gray-700 dark:text-gray-300 mb-3">
+                    If you have questions about this privacy policy, you can contact us at:
                   </p>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                    <span className="text-blue-600 dark:text-blue-400 font-medium">Email:</span>
+                    <a 
+                      href="mailto:presencematic@gmail.com" 
+                      className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors"
+                    >
+                      presencematic@gmail.com
+                    </a>
+                  </div>
                 </div>
               </div>
 
