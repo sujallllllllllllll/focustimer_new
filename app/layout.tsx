@@ -91,6 +91,11 @@ export default function RootLayout({
           }}
         />
         <meta name="google-adsense-account" content="ca-pub-6308926394211577" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6308926394211577"
+          crossOrigin="anonymous"
+        />
         <StructuredData type="WebApplication" page="home" />
 
         {/* 🔥 Inline critical CSS */}
