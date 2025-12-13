@@ -123,25 +123,148 @@ export default function Timer9020Page() {
           </div>
 
           <div className="animate-fade-in animation-delay-1000">
-            <article className="prose prose-base sm:prose-lg mx-auto px-4 sm:px-0">
+            <article className="prose prose-base sm:prose-lg mx-auto px-4 sm:px-0 space-y-8">
               <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
                 <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-red-600 to-rose-600 dark:from-red-400 dark:to-rose-400 bg-clip-text text-transparent mb-4">
-                  About the 90/20 Timer
+                  The Power of the 90/20 Rule
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                  The 90/20 technique is based on natural ultradian rhythms - our body's 
-                  natural 90-minute cycles of alertness. This timer maximizes deep work 
-                  periods while providing substantial recovery time.
+                  Based on ultradian rhythms, the 90/20 timer optimizes for your brain's natural energy cycles.
+                  Most people can tackle a high-intensity task for about 90 minutes before performance drops.
+                  The 20-minute break is crucial for fully recharging these energy stores.
                 </p>
+
                 <h3 className="text-xl sm:text-2xl font-semibold text-red-700 dark:text-red-300 mb-3">
-                  Ideal For:
+                  How to Use It
                 </h3>
-                <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                  <li>Complex problem-solving requiring sustained focus</li>
-                  <li>Creative work and artistic projects</li>
-                  <li>Research and academic writing</li>
-                  <li>Learning new skills or concepts</li>
+                <ol className="space-y-2 text-gray-700 dark:text-gray-300 mb-6">
+                  <li><strong>Focus Phase (90 min):</strong> Eliminate all distractions. No phone, no email, no notifications. This is for your highest-value work.</li>
+                  <li><strong>Recovery Phase (20 min):</strong> Step away completely. Walk, stretch, meditate, or have a snack. Do not switch to another screen.</li>
+                </ol>
+              </div>
+
+              {/* Who It's For */}
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-semibold text-red-700 dark:text-red-300 mb-4">
+                  Who Should Use the 90/20 Timer?
+                </h3>
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-xl">
+                    <h4 className="font-semibold text-red-900 dark:text-red-100 mb-2">Indie Makers</h4>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Perfect for shipping features. 90 minutes is enough to plan, code, and test a significant chunk of functionality.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-rose-50 dark:bg-rose-900/20 rounded-xl">
+                    <h4 className="font-semibold text-rose-900 dark:text-rose-100 mb-2">Academics</h4>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Ideal for writing thesis chapters or analyzing complex datasets where context switching is costly.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-pink-50 dark:bg-pink-900/20 rounded-xl">
+                    <h4 className="font-semibold text-pink-900 dark:text-pink-100 mb-2">Musicians & Artists</h4>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Great for practice sessions or creative flow where you need time to warm up and get into the zone.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-xl">
+                    <h4 className="font-semibold text-red-900 dark:text-red-100 mb-2">Entrepreneurs</h4>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Use it for strategic planning, pitch deck creation, or deep market research.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Example Schedule */}
+              <div className="bg-gradient-to-br from-red-50 to-rose-50 dark:from-red-900/20 dark:to-rose-900/20 rounded-2xl shadow-xl border border-red-200/50 dark:border-red-800/50 p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-semibold text-red-700 dark:text-red-300 mb-4">
+                  Example Daily Flow: 2 Big Blocks
+                </h3>
+                <div className="space-y-3 text-gray-700 dark:text-gray-300">
+                  <div className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-20 font-semibold text-red-600 dark:text-red-400">9:00-10:30</span>
+                    <div>
+                      <p className="font-medium">Block 1: The "One Big Thing"</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Your most important project. No interruptions allowed.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-20 font-semibold text-rose-600 dark:text-rose-400">10:30-10:50</span>
+                    <p className="italic text-sm">Break: Complete disconnection. Walk, coffee, no tech.</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-20 font-semibold text-red-600 dark:text-red-400">10:50-12:20</span>
+                    <div>
+                      <p className="font-medium">Block 2: Secondary Project</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Deep work on your second priority or continuation of first.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-20 font-semibold text-rose-600 dark:text-rose-400">12:20-13:20</span>
+                    <p className="italic text-sm">Lunch & Admin: After lunch, switch to checking emails/meetings.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Benefits */}
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-semibold text-red-700 dark:text-red-300 mb-4">
+                  Why It's Effective
+                </h3>
+                <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 text-red-500 text-xl">✓</span>
+                    <div>
+                      <strong>Biological Alignment:</strong> Works with, not against, your body's natural energy cycles (BRAC - Basic Rest-Activity Cycle).
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 text-red-500 text-xl">✓</span>
+                    <div>
+                      <strong>Maximum Output:</strong> 90 minutes is long enough to produce a significant amount of work, often equivalent to 3-4 fragmented hours.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 text-red-500 text-xl">✓</span>
+                    <div>
+                      <strong>Guilt-Free Rest:</strong> The 20-minute break is earned and necessary, preventing burnout.
+                    </div>
+                  </li>
                 </ul>
+              </div>
+
+              {/* FAQ Section */}
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-red-700 dark:text-red-300 mb-6">
+                  90/20 Timer FAQ
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                      Can I sustain this all day?
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Likely not. Most high-performers maximize at 3 blocks (4.5 hours of deep work) per day. The rest of the day should be for lower-intensity tasks.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                      What if I get distracted?
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      If you're interrupted briefly, pause the timer. If it's a long interruption, consider restarting the block later. Protect these 90 minutes fiercely.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                      Is 20 minutes too long for a break?
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      No. After 90 minutes of intense focus, your brain needs substantial recovery to replenish glucose and neurotransmitters. 5 minutes isn't enough here.
+                    </p>
+                  </div>
+                </div>
               </div>
             </article>
           </div>

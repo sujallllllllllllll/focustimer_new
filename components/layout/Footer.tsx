@@ -12,7 +12,7 @@ export function Footer() {
       </div>
 
       <div className="container mx-auto px-4 py-8 sm:py-12 relative">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Timers Section */}
           <div className="group">
             <div className="inline-block mb-3 sm:mb-4">
@@ -38,6 +38,33 @@ export function Footer() {
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-500 opacity-0 group-hover/link:opacity-100 transition-opacity duration-200"></span>
                   <span className="group-hover/link:translate-x-1 transition-transform duration-200">50/10 Timer</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/60-10-timer"
+                  className="text-sm text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-200 inline-flex items-center gap-2 group/link"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500 opacity-0 group-hover/link:opacity-100 transition-opacity duration-200"></span>
+                  <span className="group-hover/link:translate-x-1 transition-transform duration-200">60/10 Timer</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/90-20-timer"
+                  className="text-sm text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-200 inline-flex items-center gap-2 group/link"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500 opacity-0 group-hover/link:opacity-100 transition-opacity duration-200"></span>
+                  <span className="group-hover/link:translate-x-1 transition-transform duration-200">90/20 Timer</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/flowtime"
+                  className="text-sm text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-200 inline-flex items-center gap-2 group/link"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500 opacity-0 group-hover/link:opacity-100 transition-opacity duration-200"></span>
+                  <span className="group-hover/link:translate-x-1 transition-transform duration-200">Flowtime</span>
                 </Link>
               </li>
               <li>
@@ -82,6 +109,36 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Resources Section */}
+          <div className="group">
+            <div className="inline-block mb-3 sm:mb-4">
+              <h3 className="font-bold text-gray-900 dark:text-gray-100 text-sm sm:text-base bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-indigo-400 dark:to-blue-400 bg-clip-text text-transparent">
+                Resources
+              </h3>
+              <div className="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full transition-all duration-300"></div>
+            </div>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-sm text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-all duration-200 inline-flex items-center gap-2 group/link"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 opacity-0 group-hover/link:opacity-100 transition-opacity duration-200"></span>
+                  <span className="group-hover/link:translate-x-1 transition-transform duration-200">Blog & Guides</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-sm text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-all duration-200 inline-flex items-center gap-2 group/link"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 opacity-0 group-hover/link:opacity-100 transition-opacity duration-200"></span>
+                  <span className="group-hover/link:translate-x-1 transition-transform duration-200">About</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Legal Section */}
           <div className="group">
             <div className="inline-block mb-3 sm:mb-4">
@@ -100,6 +157,24 @@ export function Footer() {
                   <span className="group-hover/link:translate-x-1 transition-transform duration-200">Privacy Policy</span>
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-sm text-gray-600 hover:text-pink-600 dark:text-gray-400 dark:hover:text-pink-400 transition-all duration-200 inline-flex items-center gap-2 group/link"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-pink-500 opacity-0 group-hover/link:opacity-100 transition-opacity duration-200"></span>
+                  <span className="group-hover/link:translate-x-1 transition-transform duration-200">Terms of Service</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-gray-600 hover:text-pink-600 dark:text-gray-400 dark:hover:text-pink-400 transition-all duration-200 inline-flex items-center gap-2 group/link"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-pink-500 opacity-0 group-hover/link:opacity-100 transition-opacity duration-200"></span>
+                  <span className="group-hover/link:translate-x-1 transition-transform duration-200">Contact</span>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -107,7 +182,7 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="relative mt-8 pt-6 sm:pt-8">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent"></div>
-          
+
           <div className="text-center space-y-3">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-full border border-gray-200/50 dark:border-gray-700/50 shadow-sm">
               <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-pulse"></div>

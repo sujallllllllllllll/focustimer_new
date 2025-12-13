@@ -129,7 +129,7 @@ export default function Timer5010Page() {
                   Free 50/10 Timer Online - Extended Focus Sessions
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                  This free online 50/10 timer is perfect for deep work sessions requiring extended concentration. 
+                  This free online 50/10 timer is perfect for deep work sessions requiring extended concentration.
                   Work for 50 minutes with 10-minute breaks - ideal for complex tasks and creative projects.
                 </p>
 
@@ -157,6 +157,160 @@ export default function Timer5010Page() {
                 </ul>
               </div>
 
+              {/* Who It's For */}
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-semibold text-green-700 dark:text-green-300 mb-4">
+                  Who Should Use the 50/10 Timer?
+                </h3>
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-xl">
+                    <h4 className="font-semibold text-green-900 dark:text-green-100 mb-2">Students</h4>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Perfect for exam preparation, essay writing, and tackling difficult subjects that require sustained concentration.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl">
+                    <h4 className="font-semibold text-emerald-900 dark:text-emerald-100 mb-2">Developers</h4>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Ideal for feature development, refactoring, and complex debugging that needs uninterrupted focus time.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-teal-50 dark:bg-teal-900/20 rounded-xl">
+                    <h4 className="font-semibold text-teal-900 dark:text-teal-100 mb-2">Writers & Creators</h4>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Great for content creation, video editing, design work, and any creative project requiring deep immersion.
+                    </p>
+                  </div>
+                  <div className="p-4 bg-cyan-50 dark:bg-cyan-900/20 rounded-xl">
+                    <h4 className="font-semibold text-cyan-900 dark:text-cyan-100 mb-2">Researchers</h4>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      Excellent for reading academic papers, data analysis, and writing research reports that demand focus.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Example Schedule */}
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl shadow-xl border border-green-200/50 dark:border-green-800/50 p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-semibold text-green-700 dark:text-green-300 mb-4">
+                  Example 3-Hour Study Block with 50/10
+                </h3>
+                <div className="space-y-3 text-gray-700 dark:text-gray-300">
+                  <div className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-20 font-semibold text-green-600 dark:text-green-400">9:00-9:50</span>
+                    <div>
+                      <p className="font-medium">Session 1: Read Chapter 5</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Take detailed notes, highlight key concepts, create summary</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-20 font-semibold text-emerald-600 dark:text-emerald-400">9:50-10:00</span>
+                    <p className="italic text-sm">Break: Walk around, stretch, hydrate</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-20 font-semibold text-green-600 dark:text-green-400">10:00-10:50</span>
+                    <div>
+                      <p className="font-medium">Session 2: Practice Problems</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Work through end-of-chapter exercises, check solutions</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-20 font-semibold text-emerald-600 dark:text-emerald-400">10:50-11:00</span>
+                    <p className="italic text-sm">Break: Snack, fresh air, rest eyes</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-20 font-semibold text-green-600 dark:text-green-400">11:00-11:50</span>
+                    <div>
+                      <p className="font-medium">Session 3: Review & Flashcards</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Create flashcards, test yourself, identify weak areas</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-20 font-semibold text-emerald-600 dark:text-emerald-400">11:50-12:30</span>
+                    <p className="italic text-sm">Long break: Lunch, complete mental reset</p>
+                  </div>
+                </div>
+                <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 italic">
+                  Result: 2.5 hours of focused study with proper breaks = better retention than 4 hours of distracted work
+                </p>
+              </div>
+
+              {/* Benefits */}
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-semibold text-green-700 dark:text-green-300 mb-4">
+                  Why 50/10 Works Better Than Shorter Timers
+                </h3>
+                <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 text-green-500 text-xl">✓</span>
+                    <div>
+                      <strong>Deeper Flow State:</strong> It takes 15-20 minutes to reach peak concentration. With 50-minute sessions, you spend more time in deep focus rather than ramping up.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 text-green-500 text-xl">✓</span>
+                    <div>
+                      <strong>Fewer Interruptions:</strong> Less context switching means your brain maintains the mental model of complex problems longer, leading to better solutions.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 text-green-500 text-xl">✓</span>
+                    <div>
+                      <strong>Better for Complex Tasks:</strong> Reading research papers, writing essays, or debugging code often requires sustained attention that 25-minute sessions interrupt.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 text-green-500 text-xl">✓</span>
+                    <div>
+                      <strong>Sustainable Productivity:</strong> Three 50-minute sessions (2.5 hours) of quality work beats six hours of distracted, low-quality effort.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Comparison */}
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-semibold text-green-700 dark:text-green-300 mb-4">
+                  50/10 vs Other Focus Timers
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-gray-200 dark:border-gray-700">
+                        <th className="text-left py-2 px-3 font-semibold text-gray-900 dark:text-gray-100">Timer</th>
+                        <th className="text-left py-2 px-3 font-semibold text-gray-900 dark:text-gray-100">Best For</th>
+                        <th className="text-left py-2 px-3 font-semibold text-gray-900 dark:text-gray-100">Focus Depth</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-gray-700 dark:text-gray-300">
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-3 font-medium text-green-600 dark:text-green-400">50/10</td>
+                        <td className="py-3 px-3">Deep work, studying, complex tasks</td>
+                        <td className="py-3 px-3">Very High</td>
+                      </tr>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-3">Pomodoro (25/5)</td>
+                        <td className="py-3 px-3">Quick tasks, beginners, variety</td>
+                        <td className="py-3 px-3">Medium</td>
+                      </tr>
+                      <tr className="border-b border-gray-100 dark:border-gray-800">
+                        <td className="py-3 px-3">60/10</td>
+                        <td className="py-3 px-3">Very complex work, experienced users</td>
+                        <td className="py-3 px-3">Very High</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-3">90/20</td>
+                        <td className="py-3 px-3">Maximum deep work, creative projects</td>
+                        <td className="py-3 px-3">Extreme</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+                  <strong>Recommendation:</strong> Start with 50/10 if Pomodoro feels too short. Move to 60/10 or 90/20 once you're comfortable with extended focus sessions.
+                </p>
+              </div>
+
               {/* FAQ Section */}
               <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 p-6 sm:p-8">
                 <h3 className="text-xl sm:text-2xl font-bold text-green-700 dark:text-green-300 mb-6">
@@ -168,7 +322,7 @@ export default function Timer5010Page() {
                       Why use 50/10 instead of 25/5 Pomodoro?
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      The 50/10 timer is better for deep work requiring extended concentration. While Pomodoro's 
+                      The 50/10 timer is better for deep work requiring extended concentration. While Pomodoro's
                       25 minutes work for quick tasks, 50 minutes allow you to enter flow state for complex work.
                     </p>
                   </div>
@@ -177,7 +331,7 @@ export default function Timer5010Page() {
                       Is 50 minutes too long for focus sessions?
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      Not for deep work! Research shows that it takes 15-20 minutes to reach peak concentration. 
+                      Not for deep work! Research shows that it takes 15-20 minutes to reach peak concentration.
                       The 50-minute sessions maximize your time in this focused state.
                     </p>
                   </div>
@@ -186,7 +340,7 @@ export default function Timer5010Page() {
                       What should I do during 10-minute breaks?
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      Step away from your workspace, stretch, hydrate, or take a short walk. Avoid screens 
+                      Step away from your workspace, stretch, hydrate, or take a short walk. Avoid screens
                       and social media to give your brain a proper rest before the next session.
                     </p>
                   </div>
@@ -195,7 +349,7 @@ export default function Timer5010Page() {
                       How many 50/10 cycles should I do per day?
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      Most people can handle 3-4 cycles (2.5-3.5 hours of deep work) per day. Start with 
+                      Most people can handle 3-4 cycles (2.5-3.5 hours of deep work) per day. Start with
                       2 cycles and gradually increase based on your energy and focus capacity.
                     </p>
                   </div>
