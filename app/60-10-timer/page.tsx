@@ -10,6 +10,7 @@ import { useTimer } from '@/hooks/useTimer';
 import { useTimerStore } from '@/store/timerStore';
 import { TIMER_PRESETS } from '@/constants/timerConfigs';
 import { SessionType } from '@/types/timer';
+import { RelatedContent } from '@/components/timer/RelatedContent';
 
 export default function Timer6010Page() {
   const { preferences, setPreferences } = useTimerStore();
@@ -277,6 +278,11 @@ export default function Timer6010Page() {
                 </div>
               </div>
             </article>
+
+            {/* Related Content */}
+            <div className="max-w-4xl mx-auto mt-16 px-4 sm:px-0">
+              <RelatedContent currentPath="/60-10-timer" tags={['60/10 timer', 'deep work', 'focus']} />
+            </div>
           </div>
         </div>
       </main>

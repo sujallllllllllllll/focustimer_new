@@ -10,6 +10,7 @@ import { useTimer } from '@/hooks/useTimer';
 import { useTimerStore } from '@/store/timerStore';
 import { TIMER_PRESETS } from '@/constants/timerConfigs';
 import { SessionType } from '@/types/timer';
+import { RelatedContent } from '@/components/timer/RelatedContent';
 
 export default function FlowtimePage() {
   const { preferences, setPreferences } = useTimerStore();
@@ -109,7 +110,7 @@ export default function FlowtimePage() {
                 onPause={pause}
                 onReset={reset}
                 onSkip={skip}
-onPiP={() => { const video = document.querySelector('video'); if (video && 'pictureInPictureEnabled' in document) { if (document.pictureInPictureElement) { document.exitPictureInPicture(); } else { video.requestPictureInPicture().catch(console.warn); } } }}
+                onPiP={() => { const video = document.querySelector('video'); if (video && 'pictureInPictureEnabled' in document) { if (document.pictureInPictureElement) { document.exitPictureInPicture(); } else { video.requestPictureInPicture().catch(console.warn); } } }}
               />
             </div>
           </div>
@@ -139,8 +140,8 @@ onPiP={() => { const video = document.querySelector('video'); if (video && 'pict
                 What is Flowtime?
               </h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Flowtime is a flexible productivity technique that adapts to your natural 
-                work rhythm. Unlike rigid timers, you work for as long as you feel focused, 
+                Flowtime is a flexible productivity technique that adapts to your natural
+                work rhythm. Unlike rigid timers, you work for as long as you feel focused,
                 then take proportional breaks (typically 20% of your work time).
               </p>
               <h3 className="text-2xl font-semibold text-teal-700 dark:text-teal-300 mt-6">
@@ -162,6 +163,11 @@ onPiP={() => { const video = document.querySelector('video'); if (video && 'pict
                 <li className="pl-2">Adapts to different types of work</li>
               </ul>
             </article>
+
+            {/* Related Content */}
+            <div className="max-w-4xl mx-auto mt-16 px-4 sm:px-0">
+              <RelatedContent currentPath="/flowtime" tags={['flowtime', 'flexible', 'productivity']} />
+            </div>
           </div>
         </div>
       </main>

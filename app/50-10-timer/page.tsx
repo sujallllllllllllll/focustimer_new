@@ -10,6 +10,7 @@ import { useTimer } from '@/hooks/useTimer';
 import { useTimerStore } from '@/store/timerStore';
 import { TIMER_PRESETS } from '@/constants/timerConfigs';
 import { SessionType } from '@/types/timer';
+import { RelatedContent } from '@/components/timer/RelatedContent';
 
 export default function Timer5010Page() {
   const { preferences, setPreferences } = useTimerStore();
@@ -289,17 +290,23 @@ export default function Timer5010Page() {
                         <td className="py-3 px-3">Very High</td>
                       </tr>
                       <tr className="border-b border-gray-100 dark:border-gray-800">
-                        <td className="py-3 px-3">Pomodoro (25/5)</td>
+                        <td className="py-3 px-3">
+                          <a href="/pomodoro" className="hover:text-green-600 dark:hover:text-green-400 underline decoration-green-300 underline-offset-2 transition-colors"> Pomodoro (25/5)</a>
+                        </td>
                         <td className="py-3 px-3">Quick tasks, beginners, variety</td>
                         <td className="py-3 px-3">Medium</td>
                       </tr>
                       <tr className="border-b border-gray-100 dark:border-gray-800">
-                        <td className="py-3 px-3">60/10</td>
+                        <td className="py-3 px-3">
+                          <a href="/60-10-timer" className="hover:text-green-600 dark:hover:text-green-400 underline decoration-green-300 underline-offset-2 transition-colors">60/10</a>
+                        </td>
                         <td className="py-3 px-3">Very complex work, experienced users</td>
                         <td className="py-3 px-3">Very High</td>
                       </tr>
                       <tr>
-                        <td className="py-3 px-3">90/20</td>
+                        <td className="py-3 px-3">
+                          <a href="/90-20-timer" className="hover:text-green-600 dark:hover:text-green-400 underline decoration-green-300 underline-offset-2 transition-colors">90/20</a>
+                        </td>
                         <td className="py-3 px-3">Maximum deep work, creative projects</td>
                         <td className="py-3 px-3">Extreme</td>
                       </tr>
@@ -356,6 +363,11 @@ export default function Timer5010Page() {
                 </div>
               </div>
             </article>
+
+            {/* Related Content */}
+            <div className="max-w-4xl mx-auto mt-16 px-4 sm:px-0">
+              <RelatedContent currentPath="/50-10-timer" tags={['50/10 timer', 'deep work', 'students']} />
+            </div>
           </div>
         </div>
       </main>

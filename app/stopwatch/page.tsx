@@ -5,6 +5,7 @@ import { Play, Pause, RotateCcw, Square } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { PiPTimer } from '@/components/mini-timer/PiPTimer';
 import { formatTime } from '@/lib/utils/formatTime';
+import { RelatedContent } from '@/components/timer/RelatedContent';
 
 export default function StopwatchPage() {
   const [time, setTime] = useState(0);
@@ -121,7 +122,7 @@ export default function StopwatchPage() {
                 className="hidden sm:flex"
               >
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 4a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4zm2 0v12h12V4H4zm8 6a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-3z"/>
+                  <path d="M2 4a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4zm2 0v12h12V4H4zm8 6a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-3z" />
                 </svg>
                 PiP
               </Button>
@@ -160,8 +161,8 @@ export default function StopwatchPage() {
                   Precision Stopwatch
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                  A reliable stopwatch for timing activities, workouts, or any task 
-                  that requires precise time measurement. Use the lap feature to track 
+                  A reliable stopwatch for timing activities, workouts, or any task
+                  that requires precise time measurement. Use the lap feature to track
                   intervals and splits.
                 </p>
                 <h3 className="text-xl sm:text-2xl font-semibold text-slate-700 dark:text-slate-300 mb-3">
@@ -176,6 +177,11 @@ export default function StopwatchPage() {
                 </ul>
               </div>
             </article>
+
+            {/* Related Content */}
+            <div className="max-w-4xl mx-auto mt-16 px-4 sm:px-0">
+              <RelatedContent currentPath="/stopwatch" tags={['stopwatch', 'timer', 'tools']} />
+            </div>
           </div>
         </div>
       </main>

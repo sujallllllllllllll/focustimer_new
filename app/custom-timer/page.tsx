@@ -10,6 +10,7 @@ import { useTimer } from '@/hooks/useTimer';
 import { useTimerStore } from '@/store/timerStore';
 import { TIMER_PRESETS } from '@/constants/timerConfigs';
 import { SessionType } from '@/types/timer';
+import { RelatedContent } from '@/components/timer/RelatedContent';
 
 export default function CustomTimerPage() {
   const { preferences, setPreferences } = useTimerStore();
@@ -129,8 +130,8 @@ export default function CustomTimerPage() {
                   Create Your Perfect Timer
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                  Everyone works differently. Use the custom timer to find your optimal 
-                  work and break intervals. Experiment with different durations to 
+                  Everyone works differently. Use the custom timer to find your optimal
+                  work and break intervals. Experiment with different durations to
                   discover what works best for your productivity style.
                 </p>
                 <h3 className="text-xl sm:text-2xl font-semibold text-purple-700 dark:text-purple-300 mb-3">
@@ -144,6 +145,11 @@ export default function CustomTimerPage() {
                 </ul>
               </div>
             </article>
+
+            {/* Related Content */}
+            <div className="max-w-4xl mx-auto mt-16 px-4 sm:px-0">
+              <RelatedContent currentPath="/custom-timer" tags={['custom', 'advanced', 'productivity']} />
+            </div>
           </div>
         </div>
       </main>

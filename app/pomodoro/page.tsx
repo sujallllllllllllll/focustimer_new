@@ -10,6 +10,7 @@ import { useTimer } from '@/hooks/useTimer';
 import { useTimerStore } from '@/store/timerStore';
 import { TIMER_PRESETS } from '@/constants/timerConfigs';
 import { SessionType } from '@/types/timer';
+import { RelatedContent } from '@/components/timer/RelatedContent';
 
 export default function PomodoroPage() {
   const { preferences, setPreferences } = useTimerStore();
@@ -39,8 +40,8 @@ export default function PomodoroPage() {
     currentSession === 'work'
       ? config.workDuration
       : currentSession === 'break'
-      ? config.breakDuration
-      : config.longBreakDuration || config.breakDuration;
+        ? config.breakDuration
+        : config.longBreakDuration || config.breakDuration;
 
   const progress = totalDuration > 0 ? ((totalDuration - timeRemaining) / totalDuration) * 100 : 0;
 
@@ -143,7 +144,7 @@ export default function PomodoroPage() {
                   Free Online Pomodoro Timer - No Signup Required
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                  This free online Pomodoro timer helps you boost productivity with the proven 25/5 technique. 
+                  This free online Pomodoro timer helps you boost productivity with the proven 25/5 technique.
                   No registration needed - start focusing immediately with our web-based timer that works offline.
                 </p>
 
@@ -162,8 +163,8 @@ export default function PomodoroPage() {
                   What is the Pomodoro Technique?
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                  The Pomodoro Technique is a time management method developed by Francesco Cirillo. 
-                  This productivity timer breaks work into 25-minute focused intervals with 5-minute breaks, 
+                  The Pomodoro Technique is a time management method developed by Francesco Cirillo.
+                  This productivity timer breaks work into 25-minute focused intervals with 5-minute breaks,
                   helping millions of people worldwide improve their focus and reduce procrastination.
                 </p>
 
@@ -191,7 +192,7 @@ export default function PomodoroPage() {
                       Is this Pomodoro timer completely free?
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      Yes! Our online Pomodoro timer is 100% free with no signup, no ads, and no premium features. 
+                      Yes! Our online Pomodoro timer is 100% free with no signup, no ads, and no premium features.
                       Use it unlimited times for your productivity needs.
                     </p>
                   </div>
@@ -200,7 +201,7 @@ export default function PomodoroPage() {
                       Does the timer work offline?
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      Yes! Once loaded, this web-based Pomodoro timer works offline. Your sessions continue 
+                      Yes! Once loaded, this web-based Pomodoro timer works offline. Your sessions continue
                       even if you lose internet connection or switch browser tabs.
                     </p>
                   </div>
@@ -209,7 +210,7 @@ export default function PomodoroPage() {
                       Can I customize the 25-minute timer duration?
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      Absolutely! Click "Settings" to adjust work and break durations. While 25/5 is the 
+                      Absolutely! Click "Settings" to adjust work and break durations. While 25/5 is the
                       traditional Pomodoro technique, you can customize it to fit your workflow.
                     </p>
                   </div>
@@ -218,7 +219,7 @@ export default function PomodoroPage() {
                       Will I get notifications when the timer ends?
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      Yes! Enable desktop notifications and sound alerts in settings. You'll get notified 
+                      Yes! Enable desktop notifications and sound alerts in settings. You'll get notified
                       even when the browser tab is inactive or minimized.
                     </p>
                   </div>
@@ -227,13 +228,18 @@ export default function PomodoroPage() {
                       How is this different from other online timers?
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 text-sm">
-                      Our focus timer is privacy-first (no tracking), works offline, has Picture-in-Picture mode, 
+                      Our focus timer is privacy-first (no tracking), works offline, has Picture-in-Picture mode,
                       and includes multiple productivity techniques beyond just Pomodoro - all in one free web app.
                     </p>
                   </div>
                 </div>
               </div>
             </article>
+
+            {/* Related Content */}
+            <div className="max-w-4xl mx-auto mt-16 px-4 sm:px-0">
+              <RelatedContent currentPath="/pomodoro" tags={['pomodoro', 'beginners', 'productivity']} />
+            </div>
           </div>
         </div>
       </main>

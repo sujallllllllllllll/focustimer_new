@@ -10,6 +10,7 @@ import { useTimer } from '@/hooks/useTimer';
 import { useTimerStore } from '@/store/timerStore';
 import { TIMER_PRESETS } from '@/constants/timerConfigs';
 import { SessionType } from '@/types/timer';
+import { RelatedContent } from '@/components/timer/RelatedContent';
 
 export default function CountdownPage() {
   const { preferences, setPreferences } = useTimerStore();
@@ -106,7 +107,7 @@ export default function CountdownPage() {
               onWorkDurationChange={(duration) =>
                 setConfig({ ...config, workDuration: duration })
               }
-              onBreakDurationChange={() => {}}
+              onBreakDurationChange={() => { }}
             />
           </div>
 
@@ -117,8 +118,8 @@ export default function CountdownPage() {
                   Simple Countdown Timer
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                  A versatile countdown timer for any activity. Set your desired duration 
-                  and get notified when time is up. Perfect for cooking, exercise, 
+                  A versatile countdown timer for any activity. Set your desired duration
+                  and get notified when time is up. Perfect for cooking, exercise,
                   meetings, or any time-bound activity.
                 </p>
                 <h3 className="text-xl sm:text-2xl font-semibold text-sky-700 dark:text-sky-300 mb-3">
@@ -133,6 +134,11 @@ export default function CountdownPage() {
                 </ul>
               </div>
             </article>
+
+            {/* Related Content */}
+            <div className="max-w-4xl mx-auto mt-16 px-4 sm:px-0">
+              <RelatedContent currentPath="/countdown" tags={['countdown', 'timer', 'tools']} />
+            </div>
           </div>
         </div>
       </main>
